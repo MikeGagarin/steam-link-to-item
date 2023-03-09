@@ -14,13 +14,12 @@ const LS = {
 /**
  * Sets options inside a select
  * @param {Element} select
- * @param {string} lang
  */
-function setSelectOptionsByLang(select, lang) {
+function setSelectOptionsByLang(select) {
     let stringOptions = '';
     select.innerHTML = '';
 
-    Object.entries(LANG).forEach(([key, value]) => {
+    LANG.forEach(([key, value]) => {
         stringOptions += "<option value='(" + value + ")'>" + value + "</option>";
     })
 
@@ -53,9 +52,9 @@ function addParametersToUrl(url, parameters) {
 /**
  * @param {string} appId
  * @param {string} itemName
- * @returns {Promise<string>}
+ * @returns {string}
  */
-async function buildLink(appId, itemName, skin) {
+function buildLink(appId, itemName, skin) {
     let itemNameSkin = itemName + ' ' + skin;
     return addParametersToUrl(STEAM_ITEM_URL, [appId, itemNameSkin]);
 }

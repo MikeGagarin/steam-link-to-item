@@ -21,7 +21,7 @@ function replaceLabelsToLinks(appId) {
 
         temp.innerText = element.innerText + ' ' + skin;
         temp.style.color = element.style.color;
-        temp.setAttribute('href', await buildLink(appId, element.innerText, skin));
+        temp.setAttribute('href', buildLink(appId, element.innerText, skin));
 
         element.innerHTML = '';
         element.append(temp);
