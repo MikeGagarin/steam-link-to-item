@@ -1,0 +1,23 @@
+{
+  "name": "Steam link to item",
+  "description": "Replaces the names of items in cases with links to the corresponding items",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {},
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting", "tabs", "activeTab", "storage"],
+  "host_permissions": [
+    "https://steamcommunity.com/*"
+  ],
+  "background" : {
+    "service_worker": "worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://steamcommunity.com/*"],
+      "js": ["utils.js"]
+    }
+  ]
+}
