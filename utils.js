@@ -19,7 +19,7 @@ function setSelectOptionsByLang(select) {
     let stringOptions = '';
     select.innerHTML = '';
 
-    LANG.forEach(([key, value]) => {
+    LANG.forEach((value) => {
         stringOptions += "<option value='(" + value + ")'>" + value + "</option>";
     })
 
